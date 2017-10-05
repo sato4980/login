@@ -1,6 +1,7 @@
 package com.internousdev.login.action;
 
 import com.internousdev.login.dao.LoginDAO;
+import com.internousdev.login.dto.LoginDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class LoginAction extends ActionSupport {
@@ -11,12 +12,12 @@ public class LoginAction extends ActionSupport {
 
 		String ret = ERROR;
 		LoginDAO dao = new LoginDAO();
-		boolean b = dao.select(username, password); // booleanは真(true)と偽(false)の2つを取る変数
-		if (b == true) {
-			if (username.equals(dao.username)) {
-				if (password.equals(dao.password)) {
-					ret = SUCCESS;
-				}
+		LoginDTO dto = new LoginDTO();
+		dto = dao.select(username, password);
+
+		if (username.equals(dto.getUsername())) {
+			if (password.equals(dto.getPassword())) {
+				ret = SUCCESS;
 			}
 		}
 

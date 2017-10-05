@@ -11,19 +11,13 @@ public class DBConnector {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/login", "root", "mysql");
-			
-			
-			
-			
+
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
-		
-		
-		
+
 		return con;
 	}
 
