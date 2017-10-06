@@ -9,3 +9,4 @@ create table users(
 insert into users values("taro","123");
 insert into users values("jiro","456");
 insert into users values("hanako","789");
+insert into users values("takashi","1234");
