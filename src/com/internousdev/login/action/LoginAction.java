@@ -15,48 +15,19 @@ public class LoginAction extends ActionSupport implements SessionAware {
 											// Stringには文字列を、objectにはいろんな部品が入れることができるよ。
 
 	public String execute() {
-
 		String ret = ERROR;
 		LoginDAO dao = new LoginDAO();
 		LoginDTO dto = new LoginDTO();
 		dto = dao.select(username, password);
-
-		session.put("username", dto.getUsername());
-		System.out.println(dto.getUsername());
-
-		session.put("password", dto.getPassword());
-		System.out.println(dto.getPassword());
-
-		// if (username.equals(dto.getUsername())) {
-		// if (password.equals(dto.getPassword())) {
-
-		// session.put("username1", "taro"); //
-		// session.get(小箱の名前)は値を取り出すことができるよ。
-		// //System.out.print((String) session.get("username")); //
-		// sessin.put(小箱の名前)は値を登録することができるよ。
-		//
-		// //session.put("password1", "123"); // sessin.put(小箱の名前,小箱の値);
-		// //System.out.println((String) session.get("password"));
-		//
-		// session.put("username2","jiro");
-		// //System.out.print((String) session.get("username"));
-		//
-		// //session.put("password2","456");
-		// //System.out.print((String) session.get("password"));
-		//
-		// //session.put("username3", "hanako");
-		// //System.out.print((String) session.get("username"));
-		//
-		// //session.put("password3", "789");
-		// //System.out.println((String) session.get("password"));
-		//
-		// session.put("username4",dto.getUsername());
-		// //System.out.println((String) session.get("username"));
-		//
-
-		ret = SUCCESS;
-		// }
-
+		if (username.equals(dto.getUsername())) {
+			if (password.equals(dto.getPassword())) {
+				session.put("username", dto.getUsername());
+				System.out.println(dto.getUsername());
+				session.put("password", dto.getPassword());
+				System.out.println(dto.getPassword());
+				ret = SUCCESS;
+			}
+		}
 		return ret;
 	}
 

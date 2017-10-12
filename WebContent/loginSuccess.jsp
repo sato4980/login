@@ -9,20 +9,18 @@
 <title>ログイン成功</title>
 </head>
 <body>
-今日の運勢は
-<form action="LoginLucky">
-<input type="submit" value="運試し">
-</form>
 	ようこそ
 	<br>
-	 <!-- #sessionは決まり文句 『sessionの中の～』という意味。 -->
+	<!-- #sessionは決まり文句 『sessionの中の～』という意味。 -->
 
-	<s:property value="#session.username" />さん
+	<s:property value="#session.username" />
+	さん
 	<br>この人のパスワードは
-<s:property value="#session.password" />	です！
+	<s:property value="#session.password" />
+	です！
 
 
-<!-- #session.usernameなら、sernameの中身のtaroとかを#sessionに持っていく -->
+	<!-- #session.usernameなら、sernameの中身のtaroとかを#sessionに持っていく -->
 </body>
 </html>
 

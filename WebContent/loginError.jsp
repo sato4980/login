@@ -11,6 +11,6 @@
 <body>
 	<h1>ログイン失敗です！</h1>
 
-		<s:property value="#session.username4" />
+	<s:property value="#session.username" />
 </body>
 </html>

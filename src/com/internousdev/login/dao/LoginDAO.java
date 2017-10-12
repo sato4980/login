@@ -46,6 +46,7 @@ public class LoginDAO {
 		} catch (SQLException e) { // 『try{}catch(){}』でなんか問題や例外が起きたときにエラーを報告してくれる。
 			e.printStackTrace(); // ←例外の情報を出力してくれる。
 		}
-		return dto; // dtoをactionに伝える
+		return dto; // dtoをactionに伝える、dtoがstringとかintみたいな返し値。
+
 	}
 }
